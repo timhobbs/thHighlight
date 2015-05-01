@@ -18,13 +18,13 @@ In the above example, whenever the `model.property` value changes, the div will 
 
 ```html
 <div th-highlight="model.property" highlight-class="hilite">{{ model.property }}</div>
-``
+```
 
 In the above example, whenever the `model.property` value changes, the div will use the CSS class `hilite` for highlighting.
 
 ```html
 <div th-highlight="model.property" highlight-class="hilite" fade-class="inactive">{{ model.property }}</div>
-``
+```
 
 In the above example, whenever the `model.property` value changes, the div will use the custom CSS class `hilite` for highlighting and the custom CSS class `inactive` for the fade effect.
 
