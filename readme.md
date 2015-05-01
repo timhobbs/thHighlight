@@ -16,14 +16,20 @@ Add `th-highlight` attribute to any element, inlcluding an ng-model property nam
 
 In the above example, whenever the `model.property` value changes, the div will apply the highlight CSS class using the defaults.
 
-`<div th-highlight="model.property" highlight-class="hilite">{{ model.property }}</div>`
+```html
+<div th-highlight="model.property" highlight-class="hilite">{{ model.property }}</div>
+``
 
 In the above example, whenever the `model.property` value changes, the div will use the CSS class `hilite` for highlighting.
 
-`<div th-highlight="model.property" highlight-class="hilite" fade-class="inactive">{{ model.property }}</div>`
+```html
+<div th-highlight="model.property" highlight-class="hilite" fade-class="inactive">{{ model.property }}</div>
+``
 
 In the above example, whenever the `model.property` value changes, the div will use the custom CSS class `hilite` for highlighting and the custom CSS class `inactive` for the fade effect.
 
-`<div th-highlight="model.property" fade-timer="3000">{{ model.property }}</div>`
+```html
+<div th-highlight="model.property" fade-timer="3000">{{ model.property }}</div>
+```
 
 In the above example, whenever the `model.property` value changes, the div will use the default CSS for highlighting. The highlight effect will use a custom length of 3 seconds.
