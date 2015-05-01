@@ -1,0 +1,11 @@
+.highlight {
+    background-color: #ffc;
+    -webkit-transition: background-color .25s;
+    transition: background-color .25s;
+}
+
+.highlight.highlight-fade {
+    background-color: #f5f5f5;
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
+}
