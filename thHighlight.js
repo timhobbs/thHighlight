@@ -34,23 +34,21 @@
                     }
 
                     if (timer) {
-                        $timeout.cancel(timer);
-                        timer = undefined;
+                        return;
                     }
 
                     var current = toArray(el.className);
-                    if (current.indexOf(scope.highlightClass) == -1) {
-                        current.push(scope.highlightClass);
-                        lightIt(current);
-                    } else {
-                        var fade = current.indexOf();
-                        if (fade !== -1) {
-                            current.slice(fade, 1);
-                        }
 
-                        lightIt(current);
+                    var fade = current.indexOf(scope.fadeClass);
+                    if (fade !== -1) {
+                        current.slice(fade, 1);
                     }
 
+                    if (current.indexOf(scope.highlightClass) == -1) {
+                        current.push(scope.highlightClass);
+                    }
+
+                    lightIt(current);
                     
                 });
 
@@ -65,7 +63,10 @@
                 function lightIt(current) {
                     el.className = current.join(" ");
                     timer = $timeout(function () {
-                        current.push(scope.fadeClass);
+                        if (current.indexOf(scope.fadeClass) == -1) {
+                            current.push(scope.fadeClass);
+                        }
+                        
                         el.className = current.join(" ");
                         el.addEventListener(transitionEvent, transitionEnd);
                     }, scope.fadeTimer);
@@ -90,6 +91,7 @@
                 }
 
                 function transitionEnd() {
+                    timer = undefined;
                     el.className = previous;
                     el.removeEventListener(transitionEvent, transitionEnd);
                 }
