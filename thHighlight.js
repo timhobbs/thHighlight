@@ -1,7 +1,8 @@
 (function (module) {
     "use strict";
 
-    module("thHighlight", []).directive("thHighlight", thHighlight);
+    module("th.highlight", [])
+        .directive("thHighlight", thHighlight);
 
     thHighlight.$inject = ["$timeout"];
     
