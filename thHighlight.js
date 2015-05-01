@@ -1,7 +1,7 @@
-(function (module) {
+(function () {
     "use strict";
 
-    module("th.highlight", [])
+    angular.module("th.highlight", [])
         .directive("thHighlight", thHighlight);
 
     thHighlight.$inject = ["$timeout"];
@@ -97,4 +97,4 @@
         }
     };  
 
-})("angular.module");
+})();
